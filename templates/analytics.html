@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Model Analytics | SalesPredict</title><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></head>
+<body><div class="app-shell">
+<nav class="topbar"><div class="brand"><div class="brand-mark">AI</div><div><strong>SalesPredict</strong><span>Machine Learning Dashboard</span></div></div><a href="/" class="nav-link">← New Prediction</a></nav>
+<main class="analytics-page">
+<div class="eyebrow"><span class="pulse"></span> MODEL PERFORMANCE</div><h1>Behind the prediction</h1><p class="sub">A quick view of how the regression models performed on the test data.</p>
+<div class="metrics">
+<div class="metric featured"><span>BEST MODEL</span><b>Gradient Boosting</b><small>Selected from 4 tested algorithms</small></div>
+<div class="metric"><span>R² SCORE</span><b>0.6112</b><small>Higher is better</small></div>
+<div class="metric"><span>MAE</span><b>719.45</b><small>Lower is better</small></div>
+<div class="metric"><span>RMSE</span><b>1028.01</b><small>Lower is better</small></div>
+</div>
+<div class="charts-grid">
+<div class="chart-card"><div class="chart-title"><div><h2>Model comparison</h2><p>R² score across tested regression algorithms.</p></div><span class="tag">R²</span></div><img src="{{ url_for('static', filename='images/model_comparison.png') }}" alt="Model comparison"></div>
+<div class="chart-card"><div class="chart-title"><div><h2>Feature importance</h2><p>Most influential predictors in Gradient Boosting.</p></div><span class="tag">FEATURES</span></div><img src="{{ url_for('static', filename='images/feature_importance.png') }}" alt="Feature importance"></div>
+<div class="chart-card wide"><div class="chart-title"><div><h2>Actual vs predicted sales</h2><p>How closely predictions track the held-out test values.</p></div><span class="tag">TEST SET</span></div><img src="{{ url_for('static', filename='images/actual_vs_predicted.png') }}" alt="Actual vs predicted"></div>
+</div>
+<div class="metric-guide"><h2>How to read the metrics</h2><div><article><b>R²</b><p>Measures how much variation in sales is explained by the model. Higher is better.</p></article><article><b>MAE</b><p>Average absolute prediction error. Lower means predictions are closer on average.</p></article><article><b>RMSE</b><p>Penalizes larger errors more strongly. Lower is better.</p></article></div></div>
+</main></div></body></html>

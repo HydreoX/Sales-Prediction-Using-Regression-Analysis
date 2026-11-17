@@ -1,0 +1,43 @@
+Feature,Importance
+num__Item_MRP,0.5418390776481872
+cat__Outlet_Type_Grocery Store,0.3013265039509019
+cat__Outlet_Identifier_OUT027,0.04825362270827704
+num__Outlet_Establishment_Year,0.042881501428978334
+cat__Outlet_Type_Supermarket Type3,0.04120423193298639
+cat__Outlet_Type_Supermarket Type1,0.014344084445879902
+num__Item_Visibility,0.0033584650285336474
+num__Item_Weight,0.0026845900468432196
+cat__Outlet_Identifier_OUT035,0.0007658259007172438
+cat__Outlet_Identifier_OUT049,0.0007375419038829448
+cat__Item_Type_Fruits and Vegetables,0.0006576741583747036
+cat__Item_Type_Breakfast,0.00032938998826905717
+cat__Outlet_Size_High,0.00023751312957003565
+cat__Outlet_Identifier_OUT046,0.0002371168941484206
+cat__Item_Type_Snack Foods,0.00023378945643935493
+cat__Item_Type_Hard Drinks,0.00017342938329332474
+cat__Outlet_Identifier_OUT045,0.0001553468288638468
+cat__Item_Type_Soft Drinks,0.00011846204840628308
+cat__Outlet_Size_Medium,0.0001150443779022868
+cat__Outlet_Identifier_OUT013,9.667498184601836e-05
+cat__Outlet_Identifier_OUT010,7.306602829241326e-05
+cat__Item_Type_Canned,6.859458123118344e-05
+cat__Item_Type_Seafood,4.991203360030134e-05
+cat__Item_Type_Health and Hygiene,1.761526499017636e-05
+cat__Item_Type_Meat,1.578216132827955e-05
+cat__Item_Fat_Content_Regular,1.5034913719290058e-05
+cat__Item_Type_Dairy,1.0108774537195379e-05
+cat__Item_Type_Baking Goods,0.0
+cat__Item_Fat_Content_Low Fat,0.0
+cat__Item_Type_Breads,0.0
+cat__Item_Type_Household,0.0
+cat__Item_Type_Frozen Foods,0.0
+cat__Item_Type_Starchy Foods,0.0
+cat__Item_Type_Others,0.0
+cat__Outlet_Identifier_OUT018,0.0
+cat__Outlet_Identifier_OUT017,0.0
+cat__Outlet_Identifier_OUT019,0.0
+cat__Outlet_Size_Small,0.0
+cat__Outlet_Location_Type_Tier 3,0.0
+cat__Outlet_Location_Type_Tier 2,0.0
+cat__Outlet_Location_Type_Tier 1,0.0
+cat__Outlet_Type_Supermarket Type2,0.0

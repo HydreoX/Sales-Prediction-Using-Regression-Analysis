@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Sales Prediction | BigMart</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="app-shell">
+  <nav class="topbar">
+    <div class="brand"><div class="brand-mark">AI</div><div><strong>SalesPredict</strong><span>Machine Learning Dashboard</span></div></div>
+    <a href="/analytics" class="nav-link">Model Analytics <span>↗</span></a>
+  </nav>
+
+  <main class="hero">
+    <section class="hero-copy">
+      <div class="eyebrow"><span class="pulse"></span> LIVE PREDICTION SYSTEM</div>
+      <h1>Predict retail sales<br><em>with machine learning.</em></h1>
+      <p>Enter product and outlet details to estimate expected Item Outlet Sales using the trained Gradient Boosting model.</p>
+      <div class="mini-stats">
+        <div><b>4</b><span>Models compared</span></div>
+        <div><b>0.6112</b><span>Best R²</span></div>
+        <div><b>8,523</b><span>Training records</span></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div><span class="step">01</span><div><h2>Prediction inputs</h2><p>Configure product & outlet attributes</p></div></div>
+        <button type="button" class="ghost-btn" id="resetBtn">↻ Reset</button>
+      </div>
+
+      <form action="/predict" method="POST" id="predictionForm">
+        <div class="section-label">PRODUCT DETAILS</div>
+        <div class="form-grid">
+          <label class="field"><span>Item Weight</span><div class="input-wrap"><input type="number" name="Item_Weight" step="0.01" value="10" min="0" required><small>kg</small></div></label>
+          <label class="field"><span>Item Fat Content</span><select name="Item_Fat_Content"><option>Low Fat</option><option>Regular</option></select></label>
+          <label class="field"><span>Item Visibility <b class="value-badge" id="visibilityValue">0.0500</b></span><input id="visibility" type="range" name="Item_Visibility" min="0" max="0.20" step="0.0001" value="0.05"><div class="range-labels"><small>0</small><small>0.20</small></div></label>
+          <label class="field"><span>Item Type</span><select name="Item_Type">
+            <option>Dairy</option><option>Soft Drinks</option><option>Meat</option><option>Fruits and Vegetables</option><option>Household</option><option>Baking Goods</option><option>Snack Foods</option><option>Frozen Foods</option><option>Breakfast</option><option>Health and Hygiene</option><option>Hard Drinks</option><option>Canned</option><option>Breads</option><option>Starchy Foods</option><option>Others</option><option>Seafood</option>
+          </select></label>
+          <label class="field"><span>Item MRP</span><div class="input-wrap"><span class="currency">₹</span><input type="number" name="Item_MRP" step="0.01" value="150" min="0" required></div></label>
+        </div>
+
+        <div class="section-label outlet-label">OUTLET DETAILS</div>
+        <div class="form-grid">
+          <label class="field"><span>Outlet Identifier</span><select name="Outlet_Identifier"><option>OUT049</option><option>OUT018</option><option>OUT010</option><option>OUT013</option><option>OUT027</option><option>OUT045</option><option>OUT017</option><option>OUT046</option><option>OUT035</option><option>OUT019</option></select></label>
+          <label class="field"><span>Establishment Year</span><input type="number" name="Outlet_Establishment_Year" value="2000" min="1980" max="2026" required></label>
+          <label class="field"><span>Outlet Size</span><select name="Outlet_Size"><option>Small</option><option>Medium</option><option>High</option></select></label>
+          <label class="field"><span>Location Type</span><select name="Outlet_Location_Type"><option>Tier 1</option><option>Tier 2</option><option>Tier 3</option></select></label>
+          <label class="field"><span>Outlet Type</span><select name="Outlet_Type"><option>Supermarket Type1</option><option>Supermarket Type2</option><option>Supermarket Type3</option><option>Grocery Store</option></select></label>
+        </div>
+
+        <div class="live-summary">
+          <div><span>MODEL</span><b>Gradient Boosting</b></div>
+          <div><span>OUTPUT</span><b>Item Outlet Sales</b></div>
+          <div><span>STATUS</span><b class="online"><i></i> Ready</b></div>
+        </div>
+        <button class="predict-btn" id="predictBtn" type="submit"><span>Predict Sales</span><b>→</b></button>
+      </form>
+    </section>
+  </main>
+</div>
+<script>
+const form=document.getElementById('predictionForm'), btn=document.getElementById('predictBtn');
+const range=document.getElementById('visibility'), badge=document.getElementById('visibilityValue');
+range.addEventListener('input',()=>badge.textContent=Number(range.value).toFixed(4));
+document.getElementById('resetBtn').addEventListener('click',()=>{form.reset(); badge.textContent='0.0500';});
+form.addEventListener('submit',()=>{btn.classList.add('loading');btn.querySelector('span').textContent='Calculating prediction…';});
+</script>
+</body>
+</html>
